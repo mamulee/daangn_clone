@@ -130,6 +130,50 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color(0xFFFF7E36),
+        elevation: 1,
+        child: Icon(
+          Icons.add_rounded,
+          size: 36,
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.black,
+        unselectedItemColor: Colors.black,
+        showUnselectedLabels: true,
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
+        iconSize: 28,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_filled),
+            label: '홈',
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.my_library_books_outlined),
+            label: '동네생활',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.fmd_good_outlined),
+            label: '내 근처',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.chat_bubble_2),
+            label: '채팅',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person_outline,
+            ),
+            label: '나의 당근',
+          ),
+        ],
+        currentIndex: 0, // 지금은 무용지물 (BottomNavigationBarType.fixed)
+      ),
     );
   }
 }
