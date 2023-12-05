@@ -61,20 +61,55 @@ class HomePage extends StatelessWidget {
       ),
       body: Row(
         children: [
-          // 이미지 들어갈 자리
-          Column(
-            children: [
-              // 'M1 아이패드 프로 11형(3세대) 와이파이 128G 팝니다.'
-              // '봉천동 · 6분 전'
-              // '100만원'
-              Row(
-                children: [
-                  // 빈 칸
-                  // 하트 아이콘
-                  // '1'
-                ],
-              ),
-            ],
+          // CilpRRect 를 통해 이미지에 곡선 border 생성
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            // 이미지
+            child: Image.network(
+              'https://cdn2.thecatapi.com/images/6bt.jpg',
+              width: 100,
+              height: 100,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Expanded(
+            child: Column(
+              children: [
+                Text(
+                  'M1 아이패드 프로 11형(3세대) 와이파이 128G 팝니다.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                  ),
+                  softWrap: false,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                SizedBox(height: 2),
+                Text(
+                  '봉천동 · 6분 전',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.black45,
+                  ),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  '100만원',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Row(
+                  children: [
+                    // 빈 칸
+                    // 하트 아이콘
+                    // '1'
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
