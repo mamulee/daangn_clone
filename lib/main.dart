@@ -60,6 +60,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Row(
+        crossAxisAlignment: CrossAxisAlignment.start, // start 기준으로 children 정렬
         children: [
           // CilpRRect 를 통해 이미지에 곡선 border 생성
           ClipRRect(
@@ -72,8 +73,10 @@ class HomePage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
+          SizedBox(width: 12),
           Expanded(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'M1 아이패드 프로 11형(3세대) 와이파이 128G 팝니다.',
@@ -103,9 +106,23 @@ class HomePage extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    // 빈 칸
-                    // 하트 아이콘
-                    // '1'
+                    Spacer(), // 빈 공간 차지
+                    GestureDetector(
+                      onTap: () {},
+                      child: Row(
+                        children: [
+                          Icon(
+                            CupertinoIcons.heart,
+                            color: Colors.black54,
+                            size: 16,
+                          ),
+                          Text(
+                            '1',
+                            style: TextStyle(color: Colors.black54),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ],
